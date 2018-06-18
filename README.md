@@ -1,4 +1,4 @@
-**1.	Contexte de l’application :**
+**Contexte de l’application :**
 
 Déterminer la position d’un collaborateur, d’une salle ou d’un service au sein de CAPGEMINI, peut s’avérer pénible en vue de l’absence de cette information.
 L’application proposé aura pour but de palier à cette problématique en fournissant à chaque collaborateur la possibilité de situer la position d’un autre collaborateur ou d’une salle dans un site donné.
@@ -7,40 +7,28 @@ Elle permettra aussi d’organiser et d’avoir une vue globale sur les position
 
 ---
 
-## 2.	Fonctionnalités 
+## 1.	Fonctionnalités 
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+•	Utilisateur
+o	Rechercher un collaborateur ou une salle 
+o	Avoir un rendu graphique des plateaux et des positions
+o	Pouvoir parcourir toutes les positions depuis le rendu graphique 
+o	Affecter un collaborateur ou une salle à une position
+o	Chercher les positions libres 
+•	Administrateur
+o	Gérer un site
+	Création / modification ou suppression d’un site
+	Création / modification ou suppression d’un plateau
+	Création / modification ou suppression d’une position
+o	Gestion des utilisateurs et des droits 
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
-
----
-
-## Create a file
-
-Next, you’ll add a new file to this repository.
-
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
 
 ---
 
-## Clone a repository
+## 2.	Socle technique 
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
-
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+Back-end :
+•	Web API avec ASP.NET Core MVC.
+•	EntityFramwork.
+Front-end :
+•	ReactJS.
