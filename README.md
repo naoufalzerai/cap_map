@@ -1,12 +1,13 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+**1.	Contexte de l’application :**
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+Déterminer la position d’un collaborateur, d’une salle ou d’un service au sein de CAPGEMINI, peut s’avérer pénible en vue de l’absence de cette information.
+L’application proposé aura pour but de palier à cette problématique en fournissant à chaque collaborateur la possibilité de situer la position d’un autre collaborateur ou d’une salle dans un site donné.
+Elle permettra aussi d’organiser et d’avoir une vue globale sur les positions et leur états actuel (libre ou occupé).
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
 
 ---
 
-## Edit a file
+## 2.	Fonctionnalités 
 
 You’ll start by editing this README file to learn how to edit a file in Bitbucket.
 
