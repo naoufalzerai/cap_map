@@ -6,7 +6,7 @@ export class Home extends Component {
     return (
       <div>
         <h1>Hello, world!</h1>
-        <Tile type="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX/AAAZ4gk3AAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"/>
+        <Tile type={1}/>        
       </div>
     );
   }

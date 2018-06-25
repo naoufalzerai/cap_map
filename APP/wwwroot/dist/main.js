@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c25671785c979066bf55"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8a0e7e551b84da37ad72"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -4784,7 +4784,7 @@ var Home = exports.Home = function (_Component) {
           null,
           "Hello, world!"
         ),
-        _react2.default.createElement(_Tile.Tile, { type: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX/AAAZ4gk3AAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC" })
+        _react2.default.createElement(_Tile.Tile, { type: 1 })
       );
     }
   }, {
@@ -9940,20 +9940,35 @@ var Tile = exports.Tile = function (_Component) {
     function Tile(props) {
         _classCallCheck(this, Tile);
 
-        return _possibleConstructorReturn(this, (Tile.__proto__ || Object.getPrototypeOf(Tile)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Tile.__proto__ || Object.getPrototypeOf(Tile)).call(this, props));
+
+        _this.state = {
+            type: props.type
+        };
+        return _this;
     }
 
     _createClass(Tile, [{
-        key: "render",
+        key: 'componentwillmount',
+        value: function componentwillmount() {
+            //
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "div",
-                null,
-                _react2.default.createElement("img", { src: this.props.type })
+                'div',
+                { style: { width: '50px', color: 'red' } },
+                _react2.default.createElement('img', { src: this.state.type }),
+                _react2.default.createElement(
+                    'svg',
+                    null,
+                    _react2.default.createElement('circle', { cx: 50, cy: 50, r: 10, fill: 'red' })
+                )
             );
         }
     }, {
-        key: "__reactstandin__regenerateByEval",
+        key: '__reactstandin__regenerateByEval',
         value: function __reactstandin__regenerateByEval(key, code) {
             this[key] = eval(code);
         }
@@ -9973,7 +9988,7 @@ var Tile = exports.Tile = function (_Component) {
         return;
     }
 
-    reactHotLoader.register(Tile, "Tile", "C:/Users/nzerai/Documents/CAPGEMINI/position_app/capgemini_map/APP/ClientApp/components/Tile.js");
+    reactHotLoader.register(Tile, 'Tile', 'C:/Users/nzerai/Documents/CAPGEMINI/position_app/capgemini_map/APP/ClientApp/components/Tile.js');
     leaveModule(module);
 })();
 
