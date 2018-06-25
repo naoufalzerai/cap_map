@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dd80e8db267b80990354"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "c25671785c979066bf55"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -4662,17 +4662,7 @@ var FetchData = exports.FetchData = function (_Component) {
   function FetchData(props) {
     _classCallCheck(this, FetchData);
 
-    var _this = _possibleConstructorReturn(this, (FetchData.__proto__ || Object.getPrototypeOf(FetchData)).call(this, props));
-
-    _this.state = { forecasts: [], loading: true };
-
-
-    fetch("api/SampleData/WeatherForecasts").then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      _this.setState({ forecasts: data, loading: false });
-    });
-    return _this;
+    return _possibleConstructorReturn(this, (FetchData.__proto__ || Object.getPrototypeOf(FetchData)).call(this, props));
   }
 
   _createClass(FetchData, [{
@@ -4686,7 +4676,15 @@ var FetchData = exports.FetchData = function (_Component) {
           null,
           "Loading..."
         )
-      ) : FetchData.renderForecastsTable(this.state.forecasts);
+      ) : _react2.default.createElement(
+        "p",
+        null,
+        _react2.default.createElement(
+          "em",
+          null,
+          "loaded..."
+        )
+      );
 
       return _react2.default.createElement(
         "div",
@@ -4708,72 +4706,6 @@ var FetchData = exports.FetchData = function (_Component) {
     key: "__reactstandin__regenerateByEval",
     value: function __reactstandin__regenerateByEval(key, code) {
       this[key] = eval(code);
-    }
-  }], [{
-    key: "renderForecastsTable",
-    value: function renderForecastsTable(forecasts) {
-      return _react2.default.createElement(
-        "table",
-        { className: "table" },
-        _react2.default.createElement(
-          "thead",
-          null,
-          _react2.default.createElement(
-            "tr",
-            null,
-            _react2.default.createElement(
-              "th",
-              null,
-              "Date"
-            ),
-            _react2.default.createElement(
-              "th",
-              null,
-              "Temp. (C)"
-            ),
-            _react2.default.createElement(
-              "th",
-              null,
-              "Temp. (F)"
-            ),
-            _react2.default.createElement(
-              "th",
-              null,
-              "Summary"
-            )
-          )
-        ),
-        _react2.default.createElement(
-          "tbody",
-          null,
-          forecasts.map(function (forecast) {
-            return _react2.default.createElement(
-              "tr",
-              { key: forecast.dateFormatted },
-              _react2.default.createElement(
-                "td",
-                null,
-                forecast.dateFormatted
-              ),
-              _react2.default.createElement(
-                "td",
-                null,
-                forecast.temperatureC
-              ),
-              _react2.default.createElement(
-                "td",
-                null,
-                forecast.temperatureF
-              ),
-              _react2.default.createElement(
-                "td",
-                null,
-                forecast.summary
-              )
-            );
-          })
-        )
-      );
     }
   }]);
 
@@ -4816,7 +4748,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(19);
+var _Tile = __webpack_require__(87);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4852,175 +4784,7 @@ var Home = exports.Home = function (_Component) {
           null,
           "Hello, world!"
         ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "Welcome to your new single-page application, built with:"
-        ),
-        _react2.default.createElement(
-          "ul",
-          null,
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "https://get.asp.net/" },
-              "ASP.NET Core"
-            ),
-            " and",
-            " ",
-            _react2.default.createElement(
-              "a",
-              { href: "https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx" },
-              "C#"
-            ),
-            " ",
-            "for cross-platform server-side code"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "https://facebook.github.io/react/" },
-              "React"
-            ),
-            " and",
-            " ",
-            _react2.default.createElement(
-              "a",
-              { href: "http://www.typescriptlang.org/" },
-              "TypeScript"
-            ),
-            " for client-side code"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "https://webpack.github.io/" },
-              "Webpack"
-            ),
-            " for building and bundling client-side resources"
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "http://getbootstrap.com/" },
-              "Bootstrap"
-            ),
-            " for layout and styling"
-          )
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "To help you get started, we've also set up:"
-        ),
-        _react2.default.createElement(
-          "ul",
-          null,
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "strong",
-              null,
-              "Client-side navigation"
-            ),
-            ". For example, click",
-            " ",
-            _react2.default.createElement(
-              "em",
-              null,
-              "Counter"
-            ),
-            " then ",
-            _react2.default.createElement(
-              "em",
-              null,
-              "Back"
-            ),
-            " to return here."
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "strong",
-              null,
-              "Webpack dev middleware"
-            ),
-            ". In development mode, there's no need to run the ",
-            _react2.default.createElement(
-              "code",
-              null,
-              "webpack"
-            ),
-            " build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file."
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "strong",
-              null,
-              "Hot module replacement"
-            ),
-            ". In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, rebuilt React components will be injected directly into your running application, preserving its live state."
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "strong",
-              null,
-              "Efficient production builds"
-            ),
-            ". In production mode, development-time features are disabled, and the ",
-            _react2.default.createElement(
-              "code",
-              null,
-              "webpack"
-            ),
-            " ",
-            "build tool produces minified static CSS and JavaScript files."
-          )
-        ),
-        _react2.default.createElement(
-          "h4",
-          null,
-          "Going further"
-        ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "For larger applications, or for server-side prerendering (i.e., for",
-          " ",
-          _react2.default.createElement(
-            "em",
-            null,
-            "isomorphic"
-          ),
-          " or ",
-          _react2.default.createElement(
-            "em",
-            null,
-            "universal"
-          ),
-          " applications), you should consider using a Flux/Redux-like architecture. You can generate an ASP.NET Core application with React and Redux using",
-          " ",
-          _react2.default.createElement(
-            "code",
-            null,
-            "dotnet new reactredux"
-          ),
-          " instead of using this template."
-        )
+        _react2.default.createElement(_Tile.Tile, { type: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX/AAAZ4gk3AAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC" })
       );
     }
   }, {
@@ -10136,6 +9900,85 @@ __webpack_require__(36);
 __webpack_require__(35);
 module.exports = __webpack_require__(33);
 
+
+/***/ }),
+/* 86 */,
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Tile = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+    var enterModule = __webpack_require__(0).enterModule;
+
+    enterModule && enterModule(module);
+})();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Tile = exports.Tile = function (_Component) {
+    _inherits(Tile, _Component);
+
+    function Tile(props) {
+        _classCallCheck(this, Tile);
+
+        return _possibleConstructorReturn(this, (Tile.__proto__ || Object.getPrototypeOf(Tile)).call(this, props));
+    }
+
+    _createClass(Tile, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement("img", { src: this.props.type })
+            );
+        }
+    }, {
+        key: "__reactstandin__regenerateByEval",
+        value: function __reactstandin__regenerateByEval(key, code) {
+            this[key] = eval(code);
+        }
+    }]);
+
+    return Tile;
+}(_react.Component);
+
+;
+
+(function () {
+    var reactHotLoader = __webpack_require__(0).default;
+
+    var leaveModule = __webpack_require__(0).leaveModule;
+
+    if (!reactHotLoader) {
+        return;
+    }
+
+    reactHotLoader.register(Tile, "Tile", "C:/Users/nzerai/Documents/CAPGEMINI/position_app/capgemini_map/APP/ClientApp/components/Tile.js");
+    leaveModule(module);
+})();
+
+;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ })
 /******/ ]);

@@ -3,16 +3,10 @@ import { RouteComponentProps } from "react-router";
 import "isomorphic-fetch";
 
 export class FetchData extends Component {
-  state = { forecasts: [], loading: true };
 
   constructor(props) {
     super(props);
 
-    fetch("api/SampleData/WeatherForecasts")
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ forecasts: data, loading: false });
-      });
   }
 
   render() {
@@ -21,7 +15,9 @@ export class FetchData extends Component {
         <em>Loading...</em>
       </p>
     ) : (
-      FetchData.renderForecastsTable(this.state.forecasts)
+      <p>
+        <em>loaded...</em>
+      </p>
     );
 
     return (
@@ -33,28 +29,4 @@ export class FetchData extends Component {
     );
   }
 
-  static renderForecastsTable(forecasts) {
-    return (
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-          </tr>
-        </thead>
-        <tbody>
-          {forecasts.map(forecast => (
-            <tr key={forecast.dateFormatted}>
-              <td>{forecast.dateFormatted}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
-  }
 }
