@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import {Tile} from "./Tile";
+import {MapEditor} from "./MapEditor";
 
 export class Home extends Component {
   render() {
     return (
       <div>
         <h1>Hello, world!</h1>
-        <Tile type="red"/>        
-        <Tile type="green"/>   
+        <MapEditor w={20} h={20}/>                
       </div>
     );
   }

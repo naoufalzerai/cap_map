@@ -12,7 +12,7 @@ namespace APP.Controllers
         [HttpGet]
         public JsonResult Index()
         {
-            return Json();
+            return Json(new object());
         }
     }
 }
