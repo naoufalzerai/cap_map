@@ -6,7 +6,8 @@ export class Home extends Component {
     return (
       <div>
         <h1>Hello, world!</h1>
-        <Tile type={1}/>        
+        <Tile type="red"/>        
+        <Tile type="green"/>   
       </div>
     );
   }

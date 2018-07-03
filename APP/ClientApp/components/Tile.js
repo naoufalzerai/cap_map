@@ -8,14 +8,15 @@ export class Tile extends Component {
       }
     }
     componentwillmount(){
-        //
+        
     }
 
     render() {
-        return <div style={{width:'50px',color:'red'}}>
+        return  <div style={{width:'50px',color:'red'}}>
             <img src= {this.state.type}/> 
             <svg>
-                <circle cx={50} cy={50} r={10} fill="red" />
+                <rect x="0" y="0" width="50" height="50"  fill={this.props.type} />
+                
             </svg>        
         </div>
     }
