@@ -303,6 +303,7 @@
 
             hiddenElement.href = 'data:text/json;charset=utf8,' + encodeURI(JSON.stringify(savel));
             hiddenElement.target = '_blank';
+            console.log(hiddenElement);
             hiddenElement.download = 'map_data.json';
             hiddenElement.click();
         }

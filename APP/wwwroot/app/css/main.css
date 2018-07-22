@@ -2,6 +2,7 @@ body{
     height:100%;
     width:100%;
     overflow:hidden;
+    font-family: 'Open Sans,sans-serif';
 }
 .fplan_selected_day {
     font-size:12px;
@@ -24,9 +25,8 @@ body{
     padding:5px;
 }
 .fplan_control_header, .fplan_map_controls{
-    background-color:#3f51b5;
-    box-shadow: 2px 2px 3px #888888;
-    font-family: serif;
+    background-color:#535353;
+    box-shadow: 2px 2px 3px #888888;    
     color:white;
     font-weight:bold;
     border-bottom-left-radius:0px;
