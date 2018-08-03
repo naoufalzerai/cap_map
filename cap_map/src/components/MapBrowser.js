@@ -6,9 +6,15 @@ export class MapBrowser extends Component {
     constructor(props) {
         super(props);    
         this._click=this._click.bind(this)    
+       
     }
-    componentDidMount(){
+    componentDidMount() {
         this.node.onclick = this._click;
+        var svg = d3
+          .select(this.node)
+          .call(d3.zoom().on("zoom", function() {
+              svg.attr("transform", d3.event.transform);
+            }));
     }
     _click(e){
         let svg = d3.select(this.node)
@@ -33,6 +39,7 @@ export class MapBrowser extends Component {
             d3.event.stopPropagation();
         });
     }
+    
     render() {
         return (
             <div>
