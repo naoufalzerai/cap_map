@@ -7,19 +7,18 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/APP.csproj"
+                "${workspaceFolder}/APP/APP.csproj"
             ],
             "problemMatcher": "$msCompile"
-        },
+        }/*,
         {
-            "label": "build",
-            "command": "dotnet",
+            "label": "react",
+            "command": "yarn ",
             "type": "process",
             "args": [
-                "build",
-                "${workspaceFolder}/APP.csproj"
-            ],
-            "problemMatcher": "$msCompile"
-        }
+                "start",
+                "${workspaceFolder}/cap_map"
+            ]
+        }*/
     ]
 }

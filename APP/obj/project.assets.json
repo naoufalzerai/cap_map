@@ -12533,23 +12533,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/naoufalzerai/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\nzerai\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/naoufalzerai/Documents/JS/capgemini/cap_map/APP/APP.csproj",
+      "projectUniqueName": "C:\\Users\\nzerai\\Documents\\CAPGEMINI\\cap_map\\APP\\APP.csproj",
       "projectName": "APP",
-      "projectPath": "/Users/naoufalzerai/Documents/JS/capgemini/cap_map/APP/APP.csproj",
-      "packagesPath": "/Users/naoufalzerai/.nuget/packages/",
-      "outputPath": "/Users/naoufalzerai/Documents/JS/capgemini/cap_map/APP/obj/",
+      "projectPath": "C:\\Users\\nzerai\\Documents\\CAPGEMINI\\cap_map\\APP\\APP.csproj",
+      "packagesPath": "C:\\Users\\nzerai\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nzerai\\Documents\\CAPGEMINI\\cap_map\\APP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/naoufalzerai/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\nzerai\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -12571,14 +12571,14 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           }
         },
         "imports": [
