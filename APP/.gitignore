@@ -1,0 +1,7 @@
+
+# production
+/bin/*
+/obj/*
+# misc
+.DS_Store
+*.dll
