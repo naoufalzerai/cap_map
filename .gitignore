@@ -22,9 +22,9 @@ _UpgradeReport_Files/
 ###############
 # Directories #
 ###############
-APP/bin/
-APP/obj/
-APP/TestResults/
+/APP/bin/
+/APP/obj/
+/APP/TestResults/
 ###################
 # Web publish log #
 ###################
@@ -78,13 +78,13 @@ _[Ss]cripts
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-cap_map/node_modules
+/cap_map/node_modules
 
 # testing
-cap_map/coverage
+/cap_map/coverage
 
 # production
-cap_map/build
+/cap_map/build
 
 # misc
 .DS_Store
