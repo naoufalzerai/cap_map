@@ -1,66 +1,54 @@
-import React, { Component } from 'react'
-import { Button, Input, Footer, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
+import React, { Component } from 'react';
+import * as d3 from "d3";
 
-export default class HomePage extends Component {
-    state = {
-        search: ""
+
+export class HomePage extends Component {
+    constructor(props) {
+        super(props);    
+        this._click=this._click.bind(this)    
     }
-
-    renderCountry = country => {
-        const { search } = this.state;
-        var code = country.code.toLowerCase()
-
-        /*if( search !== "" && country.name.toLowerCase().indexOf( search.toLowerCase() ) === -1 ){
-            return null
-        }*/
-
-        return <div className="col-md-3" style={{ marginTop: '20px' }}>
-            <Card>
-                <CardBody>
-                    <p className=""><img src={blankImg} className={"flag flag-" + code} alt={country.name} /></p>
-                    <CardTitle title={country.name}>{country.name.substring(0, 15)}{country.name.length > 15 && "..."}</CardTitle>
-                </CardBody>
-            </Card>
-        </div>
+    componentDidMount(){
+        this.node.onclick = this._click;
     }
+    _click(e){
+        let svg = d3.select(this.node)
+        let mouse = d3.clientPoint(e.target, e);
 
-    onchange = e => {
-        this.setState({ search: e.target.value });
+        var pointer = svg
+            .append("use")
+            .attr("href", "#pointer")
+            .attr("transform", "translate(" + mouse[0] + "," + mouse[1] + ")scale(0)")
+            .attr("fill", "#039BE5")
+            .attr("stroke", "#039BE5")
+            .attr("stroke-width", "1px");
+
+        pointer
+            .transition()
+            .duration(500)
+            .attr("x", mouse[0])
+            .attr("y", mouse[1])
+            .attr("transform", "scale(1)");
+        pointer.on("click", function () {
+            alert('')
+            d3.event.stopPropagation();
+        });
     }
-
     render() {
-
-        const { search } = this.state;
-        const filteredCountries = countriesList.filter(country => {
-            return country.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
-        })
-
         return (
-            <div className="flyout">
-                <main style={{ marginTop: '4rem' }}>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col"></div>
-                            <div className="col">
-                                <Input label="Search Country" icon="search" onChange={this.onchange} />
-                            </div>
-                            <div className="col"></div>
-                        </div>
-                        <div className="row">
-                            {
-                                filteredCountries.map(country => {
-                                    return this.renderCountry(country)
-                                })
-                            }
-                        </div>
-                    </div>
-                </main>
-                <Footer color="indigo">
-                    <p className="footer-copyright mb-0">
-                        &copy; {(new Date().getFullYear())} Copyright
-                </p>
-                </Footer>
+            <div>
+            <svg ref={node => this.node = node}
+                width={500} height={500}>
+                    <defs>
+                        <g id="pointer" transform="scale(0.8)">
+                            <path d="M0-1c-14.5-25.6-14.5-25.7-14.5-33.8c0-8.1,6.5-14.6,14.5-14.6s14.5,6.6,14.5,14.6C14.5-26.7,14.5-26.6,0-1z"></path>
+                            <path d="M0-49c7.7,0,14,6.3,14,14.1c0,8,0,8.1-14,32.8c-14-24.7-14-24.9-14-32.8C-14-42.7-7.7-49,0-49 M0-50c-8.3,0-15,6.8-15,15.1 S-15-26.5,0,0c15-26.5,15-26.5,15-34.9S8.3-50,0-50L0-50z"></path>
+                        </g>
+                    </defs>
+
+            </svg>
+            
             </div>
         );
     }
 }
+

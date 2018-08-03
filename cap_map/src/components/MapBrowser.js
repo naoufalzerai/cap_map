@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as d3 from "d3";
 
 
-class MapBrowser extends Component {
+export class MapBrowser extends Component {
     constructor(props) {
         super(props);    
         this._click=this._click.bind(this)    
@@ -52,4 +52,3 @@ class MapBrowser extends Component {
     }
 }
 
-export default MapBrowser;

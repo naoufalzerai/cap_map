@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import MapBrowser from './components/MapBrowser'
+import logo from '../svg/logo.svg';
+import '../css/App.css';
 
-class App extends Component {
+export class Layout extends Component {
   render() {
     return (
       <div className="App">
@@ -13,11 +12,8 @@ class App extends Component {
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <MapBrowser/>
+        </p>{this.props.children}
       </div>
     );
   }
 }
-
-export default App;
