@@ -96,3 +96,9 @@ _[Ss]cripts
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+APP/obj/Debug/netcoreapp2.0/APP.csproj.FileListAbsolute.txt
+APP/obj/Debug/netcoreapp2.0/APP.dll
+APP/obj/Debug/netcoreapp2.0/APP.pdb
+APP/obj/Debug/netcoreapp2.0/APP.AssemblyInfo.cs
+APP/obj/Debug/netcoreapp2.0/APP.AssemblyInfoInputs.cache
+APP/obj/Debug/netcoreapp2.0/APP.csproj.CoreCompileInputs.cache
