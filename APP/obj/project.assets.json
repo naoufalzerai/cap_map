@@ -12533,23 +12533,40 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\kabenbra\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+=======
+    "/Users/naoufalzerai/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+>>>>>>> c2be65af9c7e14333d18fd365139e8b114f972c0
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "c:\\Users\\kabenbra\\Desktop\\projet_interne\\cap_map\\APP\\APP.csproj",
       "projectName": "APP",
       "projectPath": "c:\\Users\\kabenbra\\Desktop\\projet_interne\\cap_map\\APP\\APP.csproj",
       "packagesPath": "C:\\Users\\kabenbra\\.nuget\\packages\\",
       "outputPath": "c:\\Users\\kabenbra\\Desktop\\projet_interne\\cap_map\\APP\\obj\\",
+=======
+      "projectUniqueName": "/Users/naoufalzerai/Documents/JS/capgemini/cap_map/APP/APP.csproj",
+      "projectName": "APP",
+      "projectPath": "/Users/naoufalzerai/Documents/JS/capgemini/cap_map/APP/APP.csproj",
+      "packagesPath": "/Users/naoufalzerai/.nuget/packages/",
+      "outputPath": "/Users/naoufalzerai/Documents/JS/capgemini/cap_map/APP/obj/",
+>>>>>>> c2be65af9c7e14333d18fd365139e8b114f972c0
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\kabenbra\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "/Users/naoufalzerai/.nuget/NuGet/NuGet.Config"
+>>>>>>> c2be65af9c7e14333d18fd365139e8b114f972c0
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -12571,14 +12588,14 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "[2.0.0, )"
-          },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0.0",
             "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "2.0.0"
           }
         },
         "imports": [
