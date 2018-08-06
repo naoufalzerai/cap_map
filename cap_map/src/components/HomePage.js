@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Input, Footer, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
-
+import logo from '../svg/logo.svg';
 
 export class HomePage extends Component {
     state = {
@@ -14,11 +14,11 @@ export class HomePage extends Component {
         /*if( search !== "" && country.name.toLowerCase().indexOf( search.toLowerCase() ) === -1 ){
             return null
         }*/
-        this.blankImg = "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiwhNrMttjcAhUDZlAKHXDKBEMQjRx6BAgBEAU&url=https%3A%2F%2Ffr.wikipedia.org%2Fwiki%2FGoogle_Chrome&psig=AOvVaw0dafZYCuByYD2lrCO2uqs2&ust=1533644851458801";
+        
         return <div className="col-md-3" style={{ marginTop : '20px' }}>
             <Card>
                 <CardBody>
-                    <p className=""><img src={this.blankImg} className={ "flag flag-"+code } alt={country.name} /></p>
+                    <p className=""><img src={logo} className={ "flag flag-"+code } alt={country.name} /></p>
                     <CardTitle title={country.name}>{country.name.substring(0, 15)}{ country.name.length > 15 && "..."}</CardTitle>
                 </CardBody>
             </Card>
