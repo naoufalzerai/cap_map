@@ -1,0 +1,25 @@
+{
+    "map_1":[
+{"uid":"s1","coords":[20,20],"name":"Seat 1","type":"H"},
+{"uid":"s1","coords":[90,20],"name":"Seat 1","type":"Box"},
+{"uid":"s1","coords":[40,90],"name":"Seat 1","type":"WC"},
+{"uid":"s1","coords":[24,300],"name":"Seat 1","type":"H"},
+{"uid":"s1","coords":[30,320],"name":"Seat 1","type":"BoxL"},
+{"uid":"s1","coords":[103,220],"name":"Seat 1","type":"BoxXL"},
+{"uid":"s1","coords":[266,50],"name":"Seat 1","type":"H"},
+{"uid":"s1","coords":[220,50],"name":"Seat 1","type":"WC"},
+{"uid":"s1","coords":[280,90],"name":"Seat 1","type":"H"},
+{"uid":"s1","coords":[234,300],"name":"Seat 1","type":"H"},
+{"uid":"s1","coords":[303,320],"name":"Seat 1","type":"H"},
+{"uid":"s1","coords":[503,220],"name":"Seat 1","type":"WC"},
+{"uid":"s1","coords":[266,50],"name":"Seat 1","type":"H"}
+],
+    "map_2":[
+{"uid":"s1","coords":[200,20],"name":"Seat 1","type":"H"},
+{"uid":"s1","coords":[40,80],"name":"Seat 1","type":"H"},
+{"uid":"s1","coords":[303,320],"name":"Seat 1","type":"H"},
+{"uid":"s1","coords":[503,220],"name":"Seat 1","type":"H"},
+{"uid":"s1","coords":[266,50],"name":"Seat 1","type":"H"}
+
+]
+}
