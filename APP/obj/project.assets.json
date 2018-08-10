@@ -12533,40 +12533,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\kabenbra\\.nuget\\packages\\": {},
+    "C:\\Users\\nzerai\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
-=======
-    "/Users/naoufalzerai/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
->>>>>>> c2be65af9c7e14333d18fd365139e8b114f972c0
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "c:\\Users\\kabenbra\\Desktop\\projet_interne\\cap_map\\APP\\APP.csproj",
+      "projectUniqueName": "C:\\Users\\nzerai\\Documents\\CAPGEMINI\\cap_map\\APP\\APP.csproj",
       "projectName": "APP",
-      "projectPath": "c:\\Users\\kabenbra\\Desktop\\projet_interne\\cap_map\\APP\\APP.csproj",
-      "packagesPath": "C:\\Users\\kabenbra\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\kabenbra\\Desktop\\projet_interne\\cap_map\\APP\\obj\\",
-=======
-      "projectUniqueName": "/Users/naoufalzerai/Documents/JS/capgemini/cap_map/APP/APP.csproj",
-      "projectName": "APP",
-      "projectPath": "/Users/naoufalzerai/Documents/JS/capgemini/cap_map/APP/APP.csproj",
-      "packagesPath": "/Users/naoufalzerai/.nuget/packages/",
-      "outputPath": "/Users/naoufalzerai/Documents/JS/capgemini/cap_map/APP/obj/",
->>>>>>> c2be65af9c7e14333d18fd365139e8b114f972c0
+      "projectPath": "C:\\Users\\nzerai\\Documents\\CAPGEMINI\\cap_map\\APP\\APP.csproj",
+      "packagesPath": "C:\\Users\\nzerai\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nzerai\\Documents\\CAPGEMINI\\cap_map\\APP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\kabenbra\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-        "/Users/naoufalzerai/.nuget/NuGet/NuGet.Config"
->>>>>>> c2be65af9c7e14333d18fd365139e8b114f972c0
+        "C:\\Users\\nzerai\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -12588,14 +12571,14 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           }
         },
         "imports": [
@@ -12605,5 +12588,13 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\nzerai\\Documents\\CAPGEMINI\\cap_map\\APP\\obj\\APP.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
