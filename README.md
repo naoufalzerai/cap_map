@@ -10,8 +10,8 @@ Elle permettra aussi d’organiser et d’avoir une vue globale sur les position
 
  - Utilisateur
 	 - [ ] Rechercher un collaborateur ou une salle
-	 - [ ] Avoir un rendu graphique des plateaux et des positions Pouvoir
-	 - [ ] parcourir toutes les positions depuis le rendu graphique 
+	 - [x] Avoir un rendu graphique des plateaux et des positions Pouvoir
+	 - [x] parcourir toutes les positions depuis le rendu graphique 
 	 - [ ] Affecter un collaborateur ou une salle à une position 
 	- [ ] Chercher les positions libres
  - Administrateur
