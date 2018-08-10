@@ -3,17 +3,23 @@ import * as d3 from "d3";
 import '../css/bootstrap.min.css';
 import maps from "../json/maps.json";
 import seats from "../json/seats.json";
+import { Button, Input, Footer} from 'mdbreact';
 
+const options = [
+    {name: 'Swedish', value: 'sv'},
+    {name: 'English', value: 'en'}
+];
 export class MapBrowser extends Component {
     constructor(props) {
         super(props);    
         this._click=this._click.bind(this)    
         this.state = { 
             maps : maps,
-            seats : seats
+            seats : seats,
+            search : ""
           }    
     }
-    
+
     /*componentDidMount() {
         this.node.onclick = this._click;
         var svg = d3
@@ -53,7 +59,20 @@ export class MapBrowser extends Component {
             d3.event.stopPropagation();
         });
     }
+    renderCountry = country =>{
+        const {search} = this.state;
+        var code = country.code.toLowerCase()
 
+        /*if( search !== "" && country.name.toLowerCase().indexOf( search.toLowerCase() ) === -1 ){
+            return null
+        }*/
+        
+        return  <ul><li className="list-group-item" title={country.name}>{country.name.substring(0, 15)}{ country.name.length > 15 && "..."}</li></ul>
+           
+    }
+    onchange = e =>{
+        this.setState({ search : e.target.value });
+    }
 
     SelSwitchMapChange(elm){
         var tab = this.state.maps.filter(function (map) {
@@ -65,7 +84,8 @@ export class MapBrowser extends Component {
         .call(d3.zoom().on("zoom", function() {
             svg.attr("transform", d3.event.transform);
           }));
-          document.getElementById("map-container").innerHTML = "";       
+          document.getElementById("map-container").innerHTML = "";    
+    //charger à partir d'un URL    
       fetch(tab[0].url)
           .then(response => response.text())
           .then(res => {
@@ -160,7 +180,38 @@ export class MapBrowser extends Component {
     
     render() {
         const divBrowser = { overflow: "hidden", border: "1px solid #222222" };
-        return <div>
+        let countriesList = [{
+            "name": "Rabat",
+            "code": "RBA"
+        },
+        {
+            "name": "Casa",
+            "code": "CAS"
+        },
+        {
+            "name": "PARIS",
+            "code": "prs"
+        }
+    ];
+    const {search} = this.state;
+    const filteredCountries = countriesList.filter( country =>{
+        return country.name.toLowerCase().indexOf( search.toLowerCase() ) !== -1
+    })
+        return (
+            <div className="flyout">
+            <main style={{marginTop: '4rem'}}>
+                <div className="container">
+                    <div className="row">
+                        <div className="col"></div>
+                        <div className="col">
+                            <Input label="Search Country" icon="search" onChange={this.onchange}/>
+                        </div>
+                        <div className="col"></div>
+                    </div>
+                </div>
+            </main>
+            
+        <div>
            <div className="row">
                 <div className="col-2">
                 <div className="form-group">
@@ -190,13 +241,27 @@ export class MapBrowser extends Component {
             </div>
 
     <div className="col-2">
-        users
+            <ul className="list-group">
+                        {
+                            filteredCountries.map( country =>{
+                                return this.renderCountry(country)
+                            })
+                        }
+            </ul>
     </div>
 
 </div>
             
            
-          </div>;
+                    </div>
+                    
+                    <Footer color="indigo">
+                <p className="footer-copyright mb-0">
+                &copy; {(new Date().getFullYear())} Copyright
+                </p>
+            </Footer>
+            </div>                    
+                    );
     }
 }
 
