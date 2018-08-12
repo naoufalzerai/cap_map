@@ -4,6 +4,7 @@ import '../css/bootstrap.min.css';
 import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter, Input, Footer } from 'mdbreact';
 import maps from "../json/maps.json";
 import seats from "../json/seats.json";
+import { ReactSVGPanZoom } from 'react-svg-pan-zoom';
 
 export class MapBrowser extends Component {
     constructor(props) {
@@ -68,7 +69,7 @@ export class MapBrowser extends Component {
         this.close();
       }
     _click(e){
-        
+        e=e.originalEvent
         let svg = d3.select(this.node)
         let mouse = d3.clientPoint(e.target, e);
 
@@ -172,7 +173,7 @@ export class MapBrowser extends Component {
         var tab = this.state.maps.filter(function (map) {
           return map.uid == elm.target.value;
       });
-      this.node.onclick = this._click;
+      //this.node.onclick = this._click;
       var svg = d3
         .select(this.node)
         .call(d3.zoom().on("zoom", function() {
@@ -221,21 +222,21 @@ export class MapBrowser extends Component {
     })
         return (
             <div className="flyout">
-            <main style={{marginTop: '4rem'}}>
+            <main style={{marginTop: '1rem'}}>
+            
                 <div className="container">
                     <div className="row">
                         <div className="col"></div>
                         <div className="col">
-                            <Input label="Search Country" icon="search" onChange={this.onchange}/>
+                            <Input icon="search" onChange={this.onchange}/>
                         </div>
                         <div className="col"></div>
                     </div>
-                </div>
-            </main>
+                
             
-        <div>
-           <div className="row">
-                <div className="col-2">
+        
+            <div className="row" style={{ marginTop: '20px' }}>
+                <div className="col-2" >
                 <div className="form-group">
                     <label className="col-form-label">Switch Maps : </label>
                     <select id="switchMaps" className="form-control form-control-sm"  onChange={this.SelSwitchMapChange.bind(this)}>
@@ -250,7 +251,13 @@ export class MapBrowser extends Component {
                 </div>
 
             <div className="col-8">
-                <svg style={divBrowser}  ref={node => (this.node = node)} width="100%" height={400}>
+            <ReactSVGPanZoom
+  width={750} height={500}
+            onClick={event => this._click(event)}
+
+  ref={pan => (this.pan = pan)} >
+
+                <svg style={divBrowser}  ref={node => (this.node = node)} width={1000} height={500}>
                 <defs>
                 <g id="hos" transform="scale(0.1)"><g><path fill="#EBEBEB" d="M140.014,0c77.323,0,140.014,62.691,140.014,140.014c0,77.314-62.691,140.014-140.014,140.014S0,217.336,0,140.014S62.682,0,140.014,0z"/><path fill="#E2574C" d="M78.749,113.787h35.135V78.749c0-4.83,3.912-8.751,8.742-8.751h34.968c4.822,0,8.733,3.92,8.733,8.751v35.03h34.951c4.839,0,8.751,3.912,8.751,8.751v35.012c0,4.848-3.912,8.768-8.751,8.768h-34.951v34.933c0,4.839-3.912,8.751-8.733,8.751h-34.968c-4.83,0-8.742-3.912-8.742-8.751V166.31H78.749c-4.839,0-8.76-3.92-8.76-8.768V122.53C69.989,117.699,73.91,113.787,78.749,113.787z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></g>
                 <g id="visioRoom" transform="scale(0.1)"><g><g><path d="M464.631,403.122C474.768,392.374,481,377.905,481,362c0-33.084-26.916-60-60-60s-60,26.916-60,60c0,15.965,6.28,30.482,16.484,41.243c-17.244,9.566-31.032,24.629-38.984,42.809c-7.952-18.179-21.74-33.242-38.984-42.809C309.72,392.482,316,377.965,316,362c0-33.084-26.916-60-60-60s-60,26.916-60,60c0,15.965,6.28,30.482,16.484,41.243c-17.244,9.566-31.032,24.629-38.984,42.809c-7.952-18.179-21.74-33.242-38.984-42.809C144.72,392.482,151,377.965,151,362c0-33.084-26.916-60-60-60s-60,26.916-60,60c0,15.905,6.233,30.374,16.369,41.122C19.596,418.3,0,447.562,0,482v15c0,8.284,6.716,15,15,15h482c8.284,0,15-6.716,15-15v-15C512,448.017,492.823,418.529,464.631,403.122z M91,332c16.542,0,30,13.458,30,30s-13.458,30-30,30s-30-13.458-30-30S74.458,332,91,332z M30,482c0-33.084,27.364-60,61-60c33.084,0,60,26.916,60,60H30z M256,332c16.542,0,30,13.458,30,30s-13.458,30-30,30s-30-13.458-30-30S239.458,332,256,332z M196,482c0-33.084,26.916-60,60-60s60,26.916,60,60H196z M421,332c16.542,0,30,13.458,30,30s-13.458,30-30,30s-30-13.458-30-30S404.458,332,421,332z M361,482c0-33.084,26.916-60,60-60c33.636,0,61,26.916,61,60H361z"/></g></g><g><g><path d="M466,0C456.896,0,83.745,0,46,0c-8.284,0-15,6.716-15,15v242c0,8.284,6.716,15,15,15c11.833,0,412.732,0,420,0c8.284,0,15-6.716,15-15V15C481,6.716,474.284,0,466,0z M91,242H61V30h30V242z M196,242c0-33.636,26.916-61,60-61s60,27.364,60,61H196z M226,121c0-16.542,13.458-30,30-30s30,13.458,30,30s-13.458,30-30,30S226,137.542,226,121z M391,242h-45c0-33.945-18.674-63.918-46.6-79.635C309.672,151.591,316,137.025,316,121c0-33.084-26.916-60-60-60s-60,26.916-60,60c0,16.025,6.328,30.591,16.6,41.365C185.397,177.676,166,207.247,166,242h-45V30h270V242z M451,242h-30V30h30V242z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></g>
@@ -267,6 +274,7 @@ export class MapBrowser extends Component {
                 </defs>
                 <use href="#map-container" x={0} y={0} />
                 </svg>
+                </ReactSVGPanZoom>
             </div>
 
     <div className="col-2">
@@ -300,13 +308,15 @@ export class MapBrowser extends Component {
           </ModalFooter>
         </Modal>
 
-          </div> 
+          
                     
                     <Footer color="indigo">
                 <p className="footer-copyright mb-0">
                 &copy; {(new Date().getFullYear())} Copyright
                 </p>
             </Footer>
+                    </div>
+            </main>
                     </div> );
     }
 }

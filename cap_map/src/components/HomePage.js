@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import { Button, Input, Footer, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
-import logo from '../svg/logo.svg';
+import {  Input, Footer, Card, CardBody, CardTitle } from 'mdbreact';
+import building from '../svg/building.svg';
+
 
 export class HomePage extends Component {
+    constructor(props) {
+        super(props);
+        this.navigate_to = this.navigate_to.bind(this)    
+    }
     state = {
         search : ""
     }
@@ -15,20 +20,28 @@ export class HomePage extends Component {
             return null
         }*/
         
-        return <div className="col-md-3" style={{ marginTop : '20px' }}>
+        return <div className="col-md-2" style={{ marginTop: "20px" }}>
             <Card>
-                <CardBody>
-                    <p className=""><img src={logo} className={ "flag flag-"+code } alt={country.name} /></p>
-                    <CardTitle title={country.name}>{country.name.substring(0, 15)}{ country.name.length > 15 && "..."}</CardTitle>
-                </CardBody>
+              <CardBody onClick={()=>this.navigate_to(country.code)}>
+                <p className="">
+                  <img src={building} className={"flag flag-" + code} alt={country.name} />
+                </p>
+                <CardTitle title={country.name}>
+                  {country.name.substring(0, 15)}
+                  {country.name.length > 15 && "..."}
+                </CardTitle>
+              </CardBody>
             </Card>
-        </div>
+          </div>;
     }
 
     onchange = e =>{
         this.setState({ search : e.target.value });
     }
-    
+    navigate_to(val){
+        this.props.history.push("/browse/" + val);
+        
+    }
     render() {
         let countriesList = [{
                 "name": "Rabat",
@@ -50,12 +63,12 @@ export class HomePage extends Component {
 
         return (
             <div className="flyout">
-            <main style={{marginTop: '4rem'}}>
+            <main style={{marginTop: '1rem'}}>
                 <div className="container">
                     <div className="row">
                         <div className="col"></div>
                         <div className="col">
-                            <Input label="Search Country" icon="search" onChange={this.onchange}/>
+                            <Input icon="search" onChange={this.onchange}/>
                         </div>
                         <div className="col"></div>
                     </div>
