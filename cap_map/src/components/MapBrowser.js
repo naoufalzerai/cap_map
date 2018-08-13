@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import * as d3 from "d3";
 import '../css/bootstrap.min.css';
-import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter, Input, Footer } from 'mdbreact';
+import {
+    Chip, ListGroupItem ,ListGroup,
+    Button,
+    Modal,
+    ModalBody,
+    ModalHeader,
+    ModalFooter,
+    Input,
+    Footer
+} from 'mdbreact';
 import maps from "../json/maps.json";
 import seats from "../json/seats.json";
 import { ReactSVGPanZoom } from 'react-svg-pan-zoom';
@@ -15,7 +24,8 @@ export class MapBrowser extends Component {
             seats : seats,
             modal: false,
             typeElement : "",
-            search : ""
+            search : "",
+            selectedMap: "map_1"
           }
           this.toggle = this.toggle.bind(this);
           this.SwitchElementsType = this.SwitchElementsType.bind(this);
@@ -94,11 +104,16 @@ export class MapBrowser extends Component {
             d3.event.stopPropagation();
         });*/
     }
-    renderCountry = country =>{
+    renderSeat = seat => {
         const {search} = this.state;
-        var code = country.code.toLowerCase()
+        var code = seat.name.toLowerCase()
 
-        return  <ul><li className="list-group-item" title={country.name}>{country.name.substring(0, 15)}{ country.name.length > 15 && "..."}</li></ul>
+        return  (
+        
+            <ListGroupItem  href="#" hover title={seat.name}>
+                {seat.name.substring(0, 15)}{ seat.name.length > 15 && "..."}
+            </ListGroupItem>
+       );
            
     }
     onchange = e =>{
@@ -191,6 +206,7 @@ export class MapBrowser extends Component {
 
           // add Seats
           let selectedMap = tab[0].uid
+          this.state.selectedMap = selectedMap;
           let tabSeats = this.state.seats[selectedMap];
           var map_container = d3.select("#map-container");
         this.state.seats[tab[0].uid].map(function (seat) {
@@ -203,22 +219,11 @@ export class MapBrowser extends Component {
     
     render() {
         const divBrowser = { overflow: "hidden", border: "1px solid #222222" };
-        let countriesList = [{
-            "name": "Rabat",
-            "code": "RBA"
-        },
-        {
-            "name": "Casa",
-            "code": "CAS"
-        },
-        {
-            "name": "PARIS",
-            "code": "prs"
-        }
-    ];
+        
     const {search} = this.state;
-    const filteredCountries = countriesList.filter( country =>{
-        return country.name.toLowerCase().indexOf( search.toLowerCase() ) !== -1
+
+    const filteredCountries = this.state.seats[this.state.selectedMap].filter(seat => {
+        return seat.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
     })
         return (
             <div className="flyout">
@@ -278,13 +283,13 @@ export class MapBrowser extends Component {
             </div>
 
     <div className="col-2">
-            <ul className="list-group">
+            <ListGroup href="#" hover >
                         {
-                            filteredCountries.map( country =>{
-                                return this.renderCountry(country)
+                            filteredCountries.map(seat => {
+                                return this.renderSeat(seat)
                             })
                         }
-            </ul>
+            </ListGroup>
     </div>
 
 </div>
