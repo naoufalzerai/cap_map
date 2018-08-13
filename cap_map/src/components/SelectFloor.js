@@ -21,10 +21,10 @@ SelSwitchMapChange(elm){
 let selectedFloor = '../svg/floor1.svg';
 switch(tab[0].uid) {
   case 'map_2':
-    selectedFloor = require("../svg/floor2.svg");
+    //selectedFloor = require("../svg/floor2.svg");
     break;
   default:
-    selectedFloor = require("../svg/floor1.svg");
+    //selectedFloor = require("../svg/floor1.svg");
     break;
 }
 
