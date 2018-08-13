@@ -23,7 +23,7 @@ export class HomePage extends Component {
         return <div className="col-md-2" style={{ marginTop: "20px" }}>
             <Card>
               <CardBody onClick={()=>this.navigate_to(country.code)}>
-                <p className="">
+                <p className="pointer-href">
                   <img src={building} className={"flag flag-" + code} alt={country.name} />
                 </p>
                 <CardTitle title={country.name}>
@@ -68,7 +68,7 @@ export class HomePage extends Component {
                     <div className="row">
                         <div className="col"></div>
                         <div className="col">
-                            <Input icon="search" onChange={this.onchange}/>
+                            <Input hint="Type the office name ..." icon="search" onChange={this.onchange}/>
                         </div>
                         <div className="col"></div>
                     </div>

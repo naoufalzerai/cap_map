@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink} from "mdbreact";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+//import 'mdbreact/dist/css/mdb.css';
 import logo from '../svg/logo.svg';
 import '../css/App.css';
-import '../css/bootstrap.min.css'
+
+
 
 export class Layout extends Component {
   render() {
