@@ -29,18 +29,35 @@ export class MapBrowser extends Component {
           this.toggle = this.toggle.bind(this);
           this.SwitchElementsType = this.SwitchElementsType.bind(this);
           this.SelSwitchMapChange = this.SelSwitchMapChange.bind(this);
+          this.SelSwitchMapChangeSuite = this.SelSwitchMapChangeSuite.bind(this);
           this.validate = this.validate.bind(this);
           this.close = this.close.bind(this);
           this._handleChange = this._handleChange.bind(this);
+          
     }
     _handleChange(e) {
         let {name, value} = e.target;
         this.setState({
             typeElement: value,
-            seat : {coords:this.state.seat.coords,type:value},
+            seat : {uid: this.state.selectedMap,coords:this.state.seat.coords,name:"seatxx",type:value},
         
         });
         
+        }
+        componentWillMount() {
+            console.log('zzzzzzzzzz');
+            fetch("http://localhost:3000/json/maps.json")
+          .then(response => response.text())
+          .then(res => {
+              console.log(res)
+          });            
+        }
+        componentDidMount() {
+            console.log('GrandChild did mount.');
+            var tab = this.state.maps.filter(function (map) {
+                return map.uid == this.state.selectedMap;
+            },this);
+            this.SelSwitchMapChangeSuite(tab[0]);
         }
     /*componentDidMount() {
         this.node.onclick = this._click;
@@ -128,16 +145,23 @@ export class MapBrowser extends Component {
             .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")")
             .attr("width", 20)
             .attr("height", 20);
-
-             text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Infirmerie').attr('fill', 'black');
+            this.state.seats[this.state.selectedMap].push(seat);
+            this.setState(
+                this.state
+            )
+             //text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Infirmerie').attr('fill', 'black');
     
             break;
             case "WC":
             node = map_container
             .append("use")
             .attr("href", "#WC")
-            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")")
-            text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('WC').attr('fill', 'black');
+            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")");
+            this.state.seats[this.state.selectedMap].push(seat);
+            this.setState(
+                this.state
+            )
+            //text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('WC').attr('fill', 'black');
 
             break;
             
@@ -145,57 +169,73 @@ export class MapBrowser extends Component {
             node = map_container
             .append("use")
             .attr("href", "#meetingRoom")
-            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")")
-            text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.15em').text('Meeting Room').attr('fill', 'black');
+            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")");
+            this.state.seats[this.state.selectedMap].push(seat);
+            this.setState(
+                this.state
+            )
+            //text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.15em').text('Meeting Room').attr('fill', 'black');
   
             break;
             case "visioRoom":
             node = map_container
             .append("use")
             .attr("href", "#visioRoom")
-            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")")
-            text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Visio Room').attr('fill', 'black');
+            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")");
+            this.state.seats[this.state.selectedMap].push(seat);
+            this.setState(
+                this.state
+            )
+            //text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Visio Room').attr('fill', 'black');
   
             break;
             case "escal":
             node = map_container
             .append("use")
             .attr("href", "#Escalier")
-            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")")
-            text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Escalier').attr('fill', 'black');
+            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")");
+            this.state.seats[this.state.selectedMap].push(seat);
+            this.setState(
+                this.state
+            )
+            //text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Escalier').attr('fill', 'black');
             break;
             
             case "ascenseur":
             node = map_container
             .append("use")
             .attr("href", "#ascenseur")
-            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")")
-            text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Ascenseur').attr('fill', 'black');
+            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")");
+            this.state.seats[this.state.selectedMap].push(seat);
+            this.setState(
+                this.state
+            )
+            //text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Ascenseur').attr('fill', 'black');
             break;
 
             case "collaborateur":
             node = map_container
             .append("use")
             .attr("href", "#user")
-            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")")
-            text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Collaborateur').attr('fill', 'black');
+            .attr("transform", "translate(" + seat.coords[0] + "," +seat.coords[1] + ")");
+            this.state.seats[this.state.selectedMap].push(seat);
+            this.setState(
+                this.state
+            )
+            //text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Collaborateur').attr('fill', 'black');
             break;
             
         }
     }
-    SelSwitchMapChange(elm){
-        var tab = this.state.maps.filter(function (map) {
-          return map.uid == elm.target.value;
-      });
-      //this.node.onclick = this._click;
-      var svg = d3
+    SelSwitchMapChangeSuite(tab){
+        var svg = d3
         .select(this.node)
         .call(d3.zoom().on("zoom", function() {
             svg.attr("transform", d3.event.transform);
           }));
           document.getElementById("map-container").innerHTML = "";    
     //charger à partir d'un URL    
-      fetch(tab[0].url)
+      fetch(tab.url)
           .then(response => response.text())
           .then(res => {
               let svg = d3.select(this.node);
@@ -204,15 +244,22 @@ export class MapBrowser extends Component {
           });
 
           // add Seats
-          let selectedMap = tab[0].uid
+          let selectedMap = tab.uid
           this.state.selectedMap = selectedMap;
           let tabSeats = this.state.seats[selectedMap];
           var map_container = d3.select("#map-container");
-        this.state.seats[tab[0].uid].map(function (seat) {
-            
-            this.SwitchElementsType(seat,map_container);
-        
+          this.state.seats[tab.uid]?
+          this.state.seats[tab.uid].map(function (seat) {            
+            this.SwitchElementsType(seat,map_container);        
           },this)
+          :""
+    }
+    SelSwitchMapChange(elm){
+        var tab = this.state.maps.filter(function (map) {
+          return map.uid == elm.target.value;
+      });
+      //this.node.onclick = this._click;
+      this.SelSwitchMapChangeSuite(tab[0]);
 
       }
     
@@ -245,7 +292,6 @@ export class MapBrowser extends Component {
                 <div className="form-group">
                     <label className="col-form-label">Switch Maps : </label>
                     <select id="switchMaps" className="form-control form-control-sm"  onChange={this.SelSwitchMapChange.bind(this)}>
-                        <option value="0">Veuillez sélectionner une valeur</option>
                         {
                         this.state.maps.map(function (item) {
                         return <option value={item.uid }>{item.title}</option>;
