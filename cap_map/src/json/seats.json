@@ -21,5 +21,13 @@
 {"uid":"s1","coords":[503,220],"name":"Seat 1","type":"collaborateur"},
 {"uid":"s1","coords":[266,50],"name":"Seat 1","type":"collaborateur"}
 
-]
+],
+"map_3":[
+    {"uid":"s1","coords":[200,20],"name":"Seat 11","type":"collaborateur"},
+    {"uid":"s1","coords":[40,80],"name":"Seat 1","type":"collaborateur"},
+    {"uid":"s1","coords":[303,320],"name":"Seat 1","type":"collaborateur"},
+    {"uid":"s1","coords":[503,220],"name":"Seat 1","type":"collaborateur"},
+    {"uid":"s1","coords":[266,50],"name":"Seat 1","type":"collaborateur"}
+    
+    ]
 }

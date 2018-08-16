@@ -33,3 +33,9 @@
 .container{
   max-width: 100%;
 }
+.blocInfo{
+  height:  200px;
+  width: 90%;
+  background-color: #e6e6e6;
+  margin-left: 15px;
+}

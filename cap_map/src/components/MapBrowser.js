@@ -33,6 +33,7 @@ export class MapBrowser extends Component {
           this.SelSwitchMapChangeSuite = this.SelSwitchMapChangeSuite.bind(this);
           this.validate = this.validate.bind(this);
           this.close = this.close.bind(this);
+          this.ClicSeats = this.ClicSeats.bind(this);
           this.AffectValidation = this.AffectValidation.bind(this);
           this.modalAffect = this.modalAffect.bind(this);
           this._handleChange = this._handleChange.bind(this);
@@ -51,7 +52,7 @@ export class MapBrowser extends Component {
             fetch("http://localhost:3000/json/maps.json")
           .then(response => response.text())
           .then(res => {
-              console.log(res)
+              console.log(res);
           });            
         }
         componentDidMount() {
@@ -138,11 +139,18 @@ export class MapBrowser extends Component {
 
         return  (
         
-            <ListGroupItem  href="#" hover title={seat.name}>
+            <ListGroupItem  className="listGroup" hover title={seat.name} cords={seat.coords} onClick={this.ClicSeats.bind(seat)}>
                 {seat.name.substring(0, 15)}{ seat.name.length > 15 && "..."}
             </ListGroupItem>
        );
            
+    }
+    ClicSeats(seat){
+        console.log(seat.target.title);
+        console.log(document.getElementsByClassName("d-inline-block")[0]);
+        //document.getElementsByClassName("d-inline-block")[0].setAttribute("class", "active");
+        document.getElementsByClassName("d-inline-block")[0].innerHTML = "<div className='row'><div className='col-xs-4'><svg>                <g id='user' transform='scale(0.2)'><path d='M394.235,333.585h-30.327c-33.495,0-60.653-27.158-60.653-60.654v-19.484c13.418-15.948,23.042-34.812,29.024-54.745c0.621-3.36,3.855-5.02,6.012-7.33c11.611-11.609,13.894-31.2,5.185-45.149c-1.186-2.117-3.322-3.953-3.201-6.576c0-17.784,0.089-35.596-0.023-53.366c-0.476-21.455-6.608-43.773-21.65-59.66c-12.144-12.836-28.819-20.479-46.022-23.75c-21.739-4.147-44.482-3.937-66.013,1.54c-18.659,4.709-36.189,15.637-47.028,31.836c-9.598,14.083-13.803,31.183-14.513,48.036c-0.266,18.094-0.061,36.233-0.116,54.371c0.413,3.631-2.667,6.088-4.058,9.094c-8.203,14.881-4.592,35.155,8.589,45.978c3.344,2.308,3.97,6.515,5.181,10.142c5.748,17.917,15.282,34.487,27.335,48.925v20.138c0,33.496-27.157,60.654-60.651,60.654H90.978c0,0-54.964,15.158-90.978,90.975v30.327c0,16.759,13.564,30.321,30.327,30.321h424.562c16.759,0,30.322-13.562,30.322-30.321V424.56C449.199,348.749,394.235,333.585,394.235,333.585z'/></g></svg></div><div className='col-xs-6'>"+seat.target.title+"</div></div>";
+        
     }
     onchange = e =>{
         this.setState({ search : e.target.value });
@@ -290,9 +298,9 @@ export class MapBrowser extends Component {
         
     const {search} = this.state;
 
-    const filteredCountries = this.state.seats[this.state.selectedMap].filter(seat => {
+    const filteredCountries = this.state.seats[this.state.selectedMap]?this.state.seats[this.state.selectedMap].filter(seat => {
         return seat.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
-    })
+    }):""
         return (
             <div className="flyout">
             <Container>
@@ -306,10 +314,9 @@ export class MapBrowser extends Component {
                         </div>
                         <div className="col"></div>
                     </div>
-                
-            
-        
+
             <div className="row" style={{ marginTop: '20px' }}>
+            
                 <div className="col-2" >
                 <div className="form-group">
                     <label className="col-form-label">Switch Maps : </label>
@@ -325,7 +332,7 @@ export class MapBrowser extends Component {
 
             <div className="col-8">
             <ReactSVGPanZoom
-  width={750} height={400}
+  width={1000} height={600}
             onClick={event => this._click(event)}
 
   ref={pan => (this.pan = pan)} >
@@ -351,11 +358,19 @@ export class MapBrowser extends Component {
             </div>
 
     <div className="col-2">
+    <div className="row">
+
+    <div className="blocInfo">
+    <div className="h-100 d-inline-block"></div>
+    </div>
+
+
+</div>
             <ListGroup href="#" hover >
                         {
-                            filteredCountries.map(seat => {
+                            filteredCountries.map?filteredCountries.map(seat => {
                                 return this.renderSeat(seat)
-                            })
+                            }):""
                         }
             </ListGroup>
     </div>
