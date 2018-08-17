@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import * as d3 from "d3";
 import {
-    Container, ListGroupItem ,ListGroup,
+    Container, 
+    ListGroup,
     Button,
     Modal,
     ModalBody,
@@ -42,8 +43,8 @@ export class MapBrowser extends Component {
     _handleChange(e) {
         let {name, value} = e.target;
         this.setState({
-            typeElement: value,
-            seat : {uid: this.state.selectedMap,coords:this.state.seat.coords,name:"seatxx",type:value},
+            typeElement: value==="collaborateur"?"freePlace":value,
+            seat : {uid: this.state.selectedMap,coords:this.state.seat.coords,name:value,type:value,picture:"http://localhost:3000/picture/"+value+".JPG"},
         
         });
         
@@ -156,7 +157,7 @@ export class MapBrowser extends Component {
             this.setState({
                 modalAffect: !this.state.modal
               });
-             d3.event.stopPropagation();
+              d3.event?d3.event.stopPropagation():"";
               
             break;
             default:
@@ -166,7 +167,7 @@ export class MapBrowser extends Component {
             document.getElementById("listGroupe").getElementsByClassName("active")[0]?document.getElementById("listGroupe").getElementsByClassName("active")[0].classList.remove("active"):"";
             //e.target?e.target.classList.add("active"):"";
             document.getElementsByName(name)[0].classList.add("active");
-            document.getElementsByClassName("d-inline-block")[0]?document.getElementsByClassName("d-inline-block")[0].innerHTML = "<div className='row'><div className='col-xs-4'><svg width='50'>                <g id='user' transform='scale(0.1)'><path d='M394.235,333.585h-30.327c-33.495,0-60.653-27.158-60.653-60.654v-19.484c13.418-15.948,23.042-34.812,29.024-54.745c0.621-3.36,3.855-5.02,6.012-7.33c11.611-11.609,13.894-31.2,5.185-45.149c-1.186-2.117-3.322-3.953-3.201-6.576c0-17.784,0.089-35.596-0.023-53.366c-0.476-21.455-6.608-43.773-21.65-59.66c-12.144-12.836-28.819-20.479-46.022-23.75c-21.739-4.147-44.482-3.937-66.013,1.54c-18.659,4.709-36.189,15.637-47.028,31.836c-9.598,14.083-13.803,31.183-14.513,48.036c-0.266,18.094-0.061,36.233-0.116,54.371c0.413,3.631-2.667,6.088-4.058,9.094c-8.203,14.881-4.592,35.155,8.589,45.978c3.344,2.308,3.97,6.515,5.181,10.142c5.748,17.917,15.282,34.487,27.335,48.925v20.138c0,33.496-27.157,60.654-60.651,60.654H90.978c0,0-54.964,15.158-90.978,90.975v30.327c0,16.759,13.564,30.321,30.327,30.321h424.562c16.759,0,30.322-13.562,30.322-30.321V424.56C449.199,348.749,394.235,333.585,394.235,333.585z'/></g></svg></div><div className='col-xs-6'>"+name+"</div></div>":"";
+            document.getElementsByClassName("d-inline-block")[0]?document.getElementsByClassName("d-inline-block")[0].innerHTML = "<div className='row'><div><img class='picture' src="+seat.picture+"></div><div>"+name+"</div></div>":"";
             document.getElementsByName("pointer")[0]?document.getElementsByName("pointer")[0].remove():"";
             let seatx=seat.coords[0]+10;
             var pointer = d3.select("#map-container")
@@ -460,7 +461,7 @@ export class MapBrowser extends Component {
           <ModalBody>
           <select className="mdb-select" onChange={this._handleChange}>
             <option value="" defaultValue>Choose your option</option>
-            <option value="collaborateur">Collaborateur</option>
+            <option value="freePlace">Collaborateur</option>
             <option value="visioRoom">Visio-Room</option>
             <option value="meetingRoom">Meeting-Room</option>
             <option value="WC">WC</option>
