@@ -11,10 +11,10 @@ import '../css/App.css';
 export class Layout extends Component {
   render() {
     return <div className="App">
-        <header className="App-header">
-          <Navbar color="unique-color-dark" dark>
+        
+          <Navbar className = "navbar navbar-expand-lg navbar-dark bg-dark" >
             <NavbarBrand href="/">
-              <img src={logo} className="App-logo" alt="logo" />
+              <img src={logo} height="25px" alt="logo" />
             </NavbarBrand>
           <NavbarNav left>
             <NavItem>
@@ -25,8 +25,7 @@ export class Layout extends Component {
             </NavItem>
           </NavbarNav>
           </Navbar>
-          
-        </header>
+        
         {this.props.children}
       </div>;
   }

@@ -1,19 +1,18 @@
 {
     "map_1":[
-{"uid": "s1","coords": [520,20],"name" : "Seat 1","type": "visioRoom"},
-{"uid": "s1","coords": [690,20],"name" : "Seat 2","type": "collaborateur"},
-{"uid": "s1","coords": [20,20],"name"  : "Seat 3","type": "WC"},
-{"uid": "s1","coords": [700,320],"name": "Seat 4","type": "ascenseur"},
-{"uid": "s1","coords": [830,320],"name": "Seat 5","type": "collaborateur"},
-{"uid": "s1","coords": [703,220],"name": "Seat 6","type": "collaborateur"},
-{"uid": "s1","coords": [866,100],"name": "Seat 7","type": "collaborateur"},
-{"uid": "s1","coords": [220,50],"name" : "Seat 8","type": "collaborateur"},
-{"uid": "s1","coords": [550,90],"name" : "Seat 9","type": "meetingRoom"},
-{"uid": "s1","coords": [774,300],"name": "Seat 10","type": "escal"},
-{"uid": "s1","coords": [303,320],"name": "Seat 11","type": "collaborateur"},
-{"uid": "s1","coords": [703,120],"name": "Seat 12","type": "visioRoom"},
-{"uid":"s1","coords":[866,50],"name":"Seat 13","type":"Infirmerie"},
-{"uid":"s1","coords":[866,50],"name":"Seat 14","type":"freePlace"}
+{"uid": "s1","coords": [520,20],"name" : "Omega","type": "visioRoom"},
+{"uid": "s1","coords": [690,20],"name" : "Jhon","type": "collaborateur"},
+{"uid": "s1","coords": [20,20],"name"  : "WC 1-R","type": "WC"},
+{"uid": "s1","coords": [700,320],"name": "Ascenseur","type": "ascenseur"},
+{"uid": "s1","coords": [830,320],"name": "Marry","type": "collaborateur"},
+{"uid": "s1","coords": [703,220],"name": "Jack","type": "collaborateur"},
+{"uid": "s1","coords": [866,100],"name": "Guest 1","type": "collaborateur"},
+{"uid": "s1","coords": [220,50],"name" : "Guest 2","type": "collaborateur"},
+{"uid": "s1","coords": [550,90],"name" : "Eridan","type": "meetingRoom"},
+{"uid": "s1","coords": [774,300],"name": "Escalier-1","type": "escal"},
+{"uid": "s1","coords": [303,320],"name": "Guest 3","type": "collaborateur"},
+{"uid": "s1","coords": [703,120],"name": "Visio","type": "visioRoom"},
+{"uid":"s1","coords":[866,50],"name":"Infirmerie","type":"Infirmerie"}
 ],
     "map_2":[
 {"uid":"s1","coords":[200,20],"name":"Seat 11","type":"collaborateur"},
@@ -25,6 +24,9 @@
 ],
 "map_3":[
     {"uid":"s1","coords":[200,20],"name":"Seat 11","type":"collaborateur"},
+    {"uid":"s1","coords":[40,80],"name":"Seat 1","type":"collaborateur"},
+    {"uid":"s1","coords":[303,320],"name":"Seat 1","type":"collaborateur"},
+    {"uid":"s1","coords":[503,220],"name":"Seat 1","type":"collaborateur"},
     {"uid":"s1","coords":[266,50],"name":"Seat 1","type":"collaborateur"}
     
     ]
