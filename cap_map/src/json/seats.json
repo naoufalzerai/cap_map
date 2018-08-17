@@ -5,14 +5,15 @@
 {"uid": "s1","coords": [20,20],"name"  : "Seat 3","type": "WC"},
 {"uid": "s1","coords": [700,320],"name": "Seat 4","type": "ascenseur"},
 {"uid": "s1","coords": [830,320],"name": "Seat 5","type": "collaborateur"},
-{"uid": "s1","coords": [703,220],"name": "Seat 1","type": "collaborateur"},
-{"uid": "s1","coords": [866,100],"name": "Seat 1","type": "collaborateur"},
-{"uid": "s1","coords": [220,50],"name" : "Seat 1","type": "collaborateur"},
-{"uid": "s1","coords": [550,90],"name" : "Seat 1","type": "meetingRoom"},
-{"uid": "s1","coords": [774,300],"name": "Seat 1","type": "escal"},
-{"uid": "s1","coords": [303,320],"name": "Seat 1","type": "collaborateur"},
-{"uid": "s1","coords": [703,120],"name": "Seat 1","type": "visioRoom"},
-{"uid":"s1","coords":[866,50],"name":"Seat 1","type":"Infirmerie"}
+{"uid": "s1","coords": [703,220],"name": "Seat 6","type": "collaborateur"},
+{"uid": "s1","coords": [866,100],"name": "Seat 7","type": "collaborateur"},
+{"uid": "s1","coords": [220,50],"name" : "Seat 8","type": "collaborateur"},
+{"uid": "s1","coords": [550,90],"name" : "Seat 9","type": "meetingRoom"},
+{"uid": "s1","coords": [774,300],"name": "Seat 10","type": "escal"},
+{"uid": "s1","coords": [303,320],"name": "Seat 11","type": "collaborateur"},
+{"uid": "s1","coords": [703,120],"name": "Seat 12","type": "visioRoom"},
+{"uid":"s1","coords":[866,50],"name":"Seat 13","type":"Infirmerie"},
+{"uid":"s1","coords":[866,50],"name":"Seat 14","type":"freePlace"}
 ],
     "map_2":[
 {"uid":"s1","coords":[200,20],"name":"Seat 11","type":"collaborateur"},
@@ -24,9 +25,6 @@
 ],
 "map_3":[
     {"uid":"s1","coords":[200,20],"name":"Seat 11","type":"collaborateur"},
-    {"uid":"s1","coords":[40,80],"name":"Seat 1","type":"collaborateur"},
-    {"uid":"s1","coords":[303,320],"name":"Seat 1","type":"collaborateur"},
-    {"uid":"s1","coords":[503,220],"name":"Seat 1","type":"collaborateur"},
     {"uid":"s1","coords":[266,50],"name":"Seat 1","type":"collaborateur"}
     
     ]
