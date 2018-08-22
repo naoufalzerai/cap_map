@@ -7,13 +7,14 @@
     "d3": "^5.5.0",
     "font-awesome": "^4.7.0",
     "glyphicons": "^0.2.0",
-    "mdbreact": "^4.6.1",
+    "mdbreact": "^4.7.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-hot-loader": "^4.3.4",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "react-svg-pan-zoom": "^2.18.0"
+    "react-svg-pan-zoom": "^2.18.0",
+    "react-virtualized": "^9.20.1"
   },
   "scripts": {
     "start": "react-scripts start",
