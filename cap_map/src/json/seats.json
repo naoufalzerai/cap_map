@@ -1,35 +1,190 @@
 {
-    "map_1":[
-{"uid": "s1","coords": [565,140],"name" : "Salle Fes","type": "visioRoom","picture":"http://localhost:3000/picture/visioRoom.JPG"},
-{"uid": "s1","coords": [95,127],"name" : "Eric Sarko","type": "collaborateur","picture":"http://localhost:3000/picture/Capture1.JPG"},
-{"uid": "s1","coords": [15,215],"name"  : "W.C","type": "WC","picture":"http://localhost:3000/picture/WC.JPG"},
-{"uid": "s1","coords": [475,125],"name": "Ascensseur","type": "ascenseur","picture":"http://localhost:3000/picture/ascenseur.JPG"},
-{"uid": "s1","coords": [75,127],"name": "Aurélien Luc","type": "collaborateur","picture":"http://localhost:3000/picture/Capture2.JPG"},
-{"uid": "s1","coords": [95,160],"name": "Fabrice sausan","type": "collaborateur","picture":"http://localhost:3000/picture/Capture5.JPG"},
-{"uid": "s1","coords": [95,195],"name": "Philipe De sosa","type": "collaborateur","picture":"http://localhost:3000/picture/Capture3.JPG"},
-{"uid": "s1","coords": [200,160],"name" : "Sarah gomese","type": "collaborateur","picture":"http://localhost:3000/picture/Capture6.JPG"},
-{"uid": "s1","coords": [270,130],"name" : "Salle Paris","type": "meetingRoom","picture":"http://localhost:3000/picture/meetingRoom.JPG"},
-{"uid": "s1","coords": [468,420],"name": "Escalier","type": "escal","picture":"http://localhost:3000/picture/escal.JPG"},
-{"uid": "s1","coords": [200,225],"name": "Josef penne","type": "collaborateur","picture":"http://localhost:3000/picture/Capture7.JPG"},
-{"uid": "s1","coords": [388,140],"name": "Salle visio Agadir","type": "visioRoom","picture":"http://localhost:3000/picture/visioRoom.JPG"},
-{"uid":"s1","coords":[570,420],"name":"Infirmerie","type":"Infirmerie","picture":"http://localhost:3000/picture/Infirmerie.JPG"},
-{"uid":"s1","coords":[75,160],"name":"Place Libre","type":"freePlace","picture":"http://localhost:3000/picture/freePlace.JPG"},
-{"uid":"s1","coords":[75,195],"name":"Place Libre","type":"freePlace","picture":"http://localhost:3000/picture/freePlace.JPG"},
-{"uid":"s1","coords":[75,225],"name":"Place Libre","type":"freePlace","picture":"http://localhost:3000/picture/freePlace.JPG"},
-{"uid":"s1","coords":[95,225],"name":"Place Libre","type":"freePlace","picture":"http://localhost:3000/picture/freePlace.JPG"},
-{"uid":"s1","coords":[200,195],"name":"Place Libre","type":"freePlace","picture":"http://localhost:3000/picture/freePlace.JPG"}
-],
-    "map_2":[
-{"uid":"s1","coords":[200,20],"name":"Seat 11","type":"collaborateur","picture":"http://localhost:3000/picture/Capture1.JPG"},
-{"uid":"s1","coords":[40,80],"name":"Seat 1","type":"collaborateur","picture":"http://localhost:3000/picture/Capture1.JPG"},
-{"uid":"s1","coords":[303,320],"name":"Seat 1","type":"collaborateur","picture":"http://localhost:3000/picture/Capture1.JPG"},
-{"uid":"s1","coords":[503,220],"name":"Seat 1","type":"collaborateur","picture":"http://localhost:3000/picture/Capture1.JPG"},
-{"uid":"s1","coords":[266,50],"name":"Seat 1","type":"collaborateur","picture":"http://localhost:3000/picture/Capture1.JPG"}
-
-],
-"map_3":[
-    {"uid":"s1","coords":[200,20],"name":"Seat 11","type":"collaborateur","picture":"http://localhost:3000/picture/Capture1.JPG"},
-    {"uid":"s1","coords":[266,50],"name":"Seat 1","type":"collaborateur","picture":"http://localhost:3000/picture/Capture1.JPG"}
-    
-    ]
+  "map_1": [
+    {
+      "uid": "s1",
+      "coords": [565, 120],
+      "name": "Salle Fes",
+      "type": "visioRoom",
+      "picture": "http://localhost:3000/picture/visioRoom.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [80, 110],
+      "name": "Eric Sarko",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture1.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [7, 195],
+      "name": "W.C",
+      "type": "WC",
+      "picture": "http://localhost:3000/picture/WC.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [7, 280],
+      "name": "W.C",
+      "type": "WC",
+      "picture": "http://localhost:3000/picture/WC.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [400, 200],
+      "name": "Escalier 1er",
+      "type": "escal",
+      "picture": "http://localhost:3000/picture/ascenseur.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [65, 110],
+      "name": "Aurélien Luc",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture2.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [80, 135],
+      "name": "Fabrice sausan",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture5.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [80, 165],
+      "name": "Philipe De sosa",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture3.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [154, 135],
+      "name": "Sarah gomese",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture6.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [230, 110],
+      "name": "Salle Paris",
+      "type": "meetingRoom",
+      "picture": "http://localhost:3000/picture/meetingRoom.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [400, 360],
+      "name": "Ascenseur 1er",
+      "type": "ascenseur",
+      "picture": "http://localhost:3000/picture/escal.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [154, 192],
+      "name": "Josef penne",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture7.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [330, 120],
+      "name": "Salle visio Agadir",
+      "type": "visioRoom",
+      "picture": "http://localhost:3000/picture/visioRoom.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [570, 360],
+      "name": "Infirmerie",
+      "type": "Infirmerie",
+      "picture": "http://localhost:3000/picture/Infirmerie.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [65, 135],
+      "name": "Place Libre",
+      "type": "freePlace",
+      "picture": "http://localhost:3000/picture/freePlace.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [65, 165],
+      "name": "Place Libre",
+      "type": "freePlace",
+      "picture": "http://localhost:3000/picture/freePlace.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [65, 190],
+      "name": "Place Libre",
+      "type": "freePlace",
+      "picture": "http://localhost:3000/picture/freePlace.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [80, 190],
+      "name": "Place Libre",
+      "type": "freePlace",
+      "picture": "http://localhost:3000/picture/freePlace.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [154, 165],
+      "name": "Place Libre",
+      "type": "freePlace",
+      "picture": "http://localhost:3000/picture/freePlace.JPG"
+    }
+  ],
+  "map_2": [
+    {
+      "uid": "s1",
+      "coords": [200, 20],
+      "name": "Seat 11",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture1.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [40, 80],
+      "name": "Seat 1",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture1.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [303, 320],
+      "name": "Seat 1",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture1.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [503, 220],
+      "name": "Seat 1",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture1.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [266, 50],
+      "name": "Seat 1",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture1.JPG"
+    }
+  ],
+  "map_3": [
+    {
+      "uid": "s1",
+      "coords": [200, 20],
+      "name": "Seat 11",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture1.JPG"
+    },
+    {
+      "uid": "s1",
+      "coords": [266, 50],
+      "name": "Seat 1",
+      "type": "collaborateur",
+      "picture": "http://localhost:3000/picture/Capture1.JPG"
+    }
+  ]
 }
