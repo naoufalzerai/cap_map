@@ -131,7 +131,7 @@ export class MapBrowser extends Component {
         this.setState({
           modalAffect: !this.state.modal
         });
-        d3.event ? d3.event.stopPropagation() : "";
+        if (typeof d3.event !== 'undefined') d3.event.stopPropagation();
 
         break;
       default:
