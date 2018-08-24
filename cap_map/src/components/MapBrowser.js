@@ -14,7 +14,7 @@ import {
 } from "mdbreact";
 import maps from "../json/maps.json";
 import seats from "../json/seats.json";
-import { zoom, ReactSVGPanZoom } from "react-svg-pan-zoom";
+import {  ReactSVGPanZoom } from "react-svg-pan-zoom";
 import { AutoSizer } from "react-virtualized";
 
 export class MapBrowser extends Component {
@@ -51,7 +51,7 @@ export class MapBrowser extends Component {
     this.onchange = this.onchange.bind(this);
   }
   _handleChange(e) {
-    let { name, value } = e.target;
+    let { value } = e.target;
     this.setState({
       typeElement: value === "collaborateur" ? "freePlace" : value,
       seat: {
@@ -65,7 +65,7 @@ export class MapBrowser extends Component {
   }
   componentDidMount() {
     var tab = this.state.maps.filter(function(map) {
-      return map.uid == this.state.selectedMap;
+      return map.uid === this.state.selectedMap;
     }, this);
     this.SelSwitchMapChangeSuite(tab[0]);
     this.pan.fitToViewer();
@@ -99,8 +99,8 @@ export class MapBrowser extends Component {
     this.toggle(mouse);
   }
   renderSeat(seat) {
-    const { search } = this.state;
-    var code = seat.name.toLowerCase();
+    //const { search } = this.state;
+    //var code = seat.name.toLowerCase();
 
     return (
       <ListGroupItem
@@ -156,7 +156,8 @@ export class MapBrowser extends Component {
           ? document.getElementsByName("pointer")[0].remove()
           : "";
         let seatx = seat.coords[0] + 10;
-        var pointer = d3
+        //var pointer = 
+        d3
           .select("#map-container")
           .append("use")
           .attr("href", "#pointer")
@@ -175,7 +176,8 @@ export class MapBrowser extends Component {
           .attr("transform", "scale(1)");
 
         d3.event ? d3.event.stopPropagation() : "";
-
+        
+        
         this.pan.setPointOnViewerCenter(seatx, seat.coords[1], 1.5);
         break;
     }
@@ -184,7 +186,7 @@ export class MapBrowser extends Component {
     this.setState({ search: e.target.value });
   }
   SwitchElementsType(seat, map_container, oldElem) {
-    let node, text;
+    let node;
     switch (seat.type) {
       case "Infirmerie":
         node = map_container
@@ -306,6 +308,7 @@ export class MapBrowser extends Component {
         node.on("click", () => this.ClicSeats(seat, this));
         //text = d3.select(node.node().parentNode).append('text').attr('x', seat.coords[0]).attr('y', seat.coords[1]).attr('dy', '-.25em').text('Collaborateur').attr('fill', 'black');
         break;
+        default : break;
     }
   }
   SelSwitchMapChangeSuite(tab) {
@@ -320,7 +323,7 @@ export class MapBrowser extends Component {
     fetch(tab.url)
       .then(response => response.text())
       .then(res => {
-        let svg = d3.select(this.node);
+        //let svg = d3.select(this.node);
         document
           .getElementById("map-container")
           .insertAdjacentHTML("afterbegin", res);
@@ -329,18 +332,19 @@ export class MapBrowser extends Component {
 
     // add Seats
     let selectedMap = tab.uid;
-    this.state.selectedMap = selectedMap;
-    let tabSeats = this.state.seats[selectedMap];
+    this.setState({ selectedMap: selectedMap})
+    //this.state.selectedMap = selectedMap;
+    //let tabSeats = this.state.seats[selectedMap];
     var map_container = d3.select("#map-container");
     this.state.seats[tab.uid]
       ? this.state.seats[tab.uid].map(function(seat) {
-          this.SwitchElementsType(seat, map_container, true);
+          return this.SwitchElementsType(seat, map_container, true);
         }, this)
       : "";
   }
   SelSwitchMapChange(elm) {
     var tab = this.state.maps.filter(function(map) {
-      return map.uid == elm.target.value;
+      return map.uid === elm.target.value;
     });
     this.SelSwitchMapChangeSuite(tab[0]);
   }

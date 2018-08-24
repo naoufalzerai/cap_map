@@ -13,7 +13,7 @@ export class HomePage extends Component {
     }
 
     renderCountry = country =>{
-        const {search} = this.state;
+        //const {search} = this.state;
         var code = country.code.toLowerCase()
 
         /*if( search !== "" && country.name.toLowerCase().indexOf( search.toLowerCase() ) === -1 ){
