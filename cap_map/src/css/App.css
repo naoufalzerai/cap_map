@@ -10,12 +10,20 @@
 }
 
 /* Profile sidebar */
-
+ @import url('https://fonts.googleapis.com/css?family=Amita');
+ .logoCapMap{
+   font-family: 'Amita', cursive;
+ }
 .profile-sidebar {
   padding: 20px 0 10px 0;
   background: #fff;
 }
-
+.fa-li{
+  position: initial;
+  top:0;
+  left: 0;
+  width: initial;
+}
 .profile-userpic img {
   float: none;
   margin: 0 auto;

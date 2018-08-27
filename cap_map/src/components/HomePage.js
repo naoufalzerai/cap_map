@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {  Input, Footer, Card, CardBody, CardTitle } from 'mdbreact';
-import building from '../svg/building.svg';
+//import building from '../svg/building.svg';
 
 
 export class HomePage extends Component {
@@ -24,7 +24,7 @@ export class HomePage extends Component {
             <Card>
               <CardBody onClick={()=>this.navigate_to(country.code)}>
                 <p className="pointer-href">
-                  <img src={building} className={"flag flag-" + code} alt={country.name} />
+                  <img src={country.photo} className={"flag flag-" + code} alt={country.name} />
                 </p>
                 <CardTitle title={country.name}>
                   {country.name.substring(0, 15)}
@@ -45,15 +45,18 @@ export class HomePage extends Component {
     render() {
         let countriesList = [{
                 "name": "Rabat",
-                "code": "RBA"
+                "code": "RBA",
+                "photo": "http://localhost:3000/svg/Rabat.svg"
             },
             {
                 "name": "Casa",
-                "code": "CAS"
+                "code": "CAS",
+                "photo": "http://localhost:3000/svg/Casa.svg"
             },
             {
-                "name": "PARIS",
-                "code": "prs"
+                "name": "Paris",
+                "code": "prs",
+                "photo": "http://localhost:3000/svg/Paris.svg"
             }
         ];
         const {search} = this.state;
@@ -68,7 +71,7 @@ export class HomePage extends Component {
                     <div className="row">
                         <div className="col"></div>
                         <div className="col">
-                            <Input hint="Type the office name ..." icon="search" onChange={this.onchange}/>
+                            <Input hint="Commencez par rechercher un bureau Capgmini ..." icon="search" onChange={this.onchange}/>
                         </div>
                         <div className="col"></div>
                     </div>
@@ -81,7 +84,7 @@ export class HomePage extends Component {
                     </div>
                 </div>
             </main>
-            <Footer color="indigo">
+            <Footer color="white">
                 <p className="footer-copyright mb-0">
                 &copy; {(new Date().getFullYear())} Copyright
                 </p>

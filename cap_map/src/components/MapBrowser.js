@@ -28,7 +28,7 @@ export class MapBrowser extends Component {
       modalAffect: false,
       typeElement: "",
       search: "",
-      selectedMap: "map_1",
+      selectedMap: "RDC",
       selectedplace: {
         uid: "",
         coords: [],
@@ -114,6 +114,7 @@ export class MapBrowser extends Component {
       >
         {seat.name.substring(0, 15)}
         {seat.name.length > 15 && "..."}
+        
       </ListGroupItem>
     );
   }
@@ -331,11 +332,13 @@ export class MapBrowser extends Component {
       });
 
     // add Seats
-    let selectedMap = tab.uid;
-    this.setState({ selectedMap: selectedMap})
+    let sm = tab.uid;
+    this.state.selectedMap=sm;
+    //this.setState({ selectedMap: sm})
     //this.state.selectedMap = selectedMap;
     //let tabSeats = this.state.seats[selectedMap];
     var map_container = d3.select("#map-container");
+    
     this.state.seats[tab.uid]
       ? this.state.seats[tab.uid].map(function(seat) {
           return this.SwitchElementsType(seat, map_container, true);
@@ -366,7 +369,7 @@ export class MapBrowser extends Component {
             <div className="row">
               <div className="col" />
               <div className="col">
-                <Input icon="search" onChange={e => {
+                <Input hint="Vous cherchez..." icon="search" onChange={e => {
                     this.onchange(e);
                   }} />
               </div>
@@ -379,7 +382,7 @@ export class MapBrowser extends Component {
                   <div className="col-12">
                     <div className="form-group">
                       <label className="col-form-label">
-                        Switch Maps :{" "}
+                        Selectionnez un étage :{" "}
                       </label>
                       <select id="switchMaps" className="form-control form-control-sm" onChange={this.SelSwitchMapChange.bind(this)}>
                         {this.state.maps.map(function(item) {

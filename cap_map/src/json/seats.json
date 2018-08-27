@@ -186,5 +186,9 @@
       "type": "collaborateur",
       "picture": "http://localhost:3000/picture/Capture1.JPG"
     }
+  ],
+  "RDC": [
+  ],
+  "map_4": [
   ]
 }

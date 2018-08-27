@@ -1,13 +1,23 @@
-[{
+[
+{
+    "url": "http://localhost:3000/svg/RDC.svg",
+    "title": "Rez de chaussée",
+    "uid": "RDC"
+},
+{
     "url": "http://localhost:3000/svg/FLOOR_1.svg",
-    "title": "Test Floor 1",
+    "title": "1er étage",
     "uid": "map_1"
 }, {
     "url": "http://localhost:3000/svg/FLOOR_2.svg",
-    "title": "Test Floor 2",
+    "title": "2eme étage",
     "uid": "map_2"
 }, {
-    "url": "http://localhost:3000/svg/FLOOR_4.svg",
-    "title": "Test Floor 3",
+    "url": "http://localhost:3000/svg/FLOOR_3.svg",
+    "title": "3eme étage",
     "uid": "map_3"
+}, {
+    "url": "http://localhost:3000/svg/FLOOR_4.svg",
+    "title": "4eme étage",
+    "uid": "map_4"
 }]
