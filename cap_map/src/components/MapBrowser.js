@@ -14,6 +14,7 @@ import {
 } from "mdbreact";
 import maps from "../json/maps.json";
 import seats from "../json/seats.json";
+import legende from "../svg/legende.svg";
 import {  ReactSVGPanZoom } from "react-svg-pan-zoom";
 import { AutoSizer } from "react-virtualized";
 
@@ -781,9 +782,13 @@ export class MapBrowser extends Component {
                 </Button>
               </ModalFooter>
             </Modal>
-
+            
             <Footer color="indigo">
+            <p className="footer-copyright mb-0">
+                <img src={legende} width={400}/>
+            </p>
               <p className="footer-copyright mb-0">
+                
                 &copy; {new Date().getFullYear()} Copyright
               </p>
             </Footer>
