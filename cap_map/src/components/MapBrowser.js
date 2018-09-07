@@ -53,12 +53,17 @@ export class MapBrowser extends Component {
   }
   _handleChange(e) {
     let { value } = e.target;
+    if(value==="visioRoom" || value==="meetingRoom"){
+      document.getElementById("divName").classList.remove('hidden');
+    }else{
+      document.getElementById("divName").classList.add('hidden');      
+    }
     this.setState({
       typeElement: value === "collaborateur" ? "freePlace" : value,
       seat: {
         uid: this.state.selectedMap,
         coords: this.state.seat.coords,
-        name: value,
+        name: document.getElementById("inputName").value,
         type: value,
         picture: "http://localhost:3000/picture/" + value + ".JPG"
       }
@@ -133,7 +138,8 @@ export class MapBrowser extends Component {
         this.setState({
           modalAffect: !this.state.modal
         });
-        if (typeof d3.event !== 'undefined') d3.event.stopPropagation();
+       d3.event?d3.event.stopPropagation():"";
+        //if (typeof d3 !== "undefined") d3.event.stopPropagation();
 
         break;
       default:
@@ -748,18 +754,30 @@ export class MapBrowser extends Component {
             <Modal isOpen={this.state.modal}>
               <ModalHeader>Create Position</ModalHeader>
               <ModalBody>
-                <select className="mdb-select" onChange={this._handleChange}>
-                  <option value="" defaultValue>
-                    Choose your option
-                  </option>
-                  <option value="freePlace">Collaborateur</option>
-                  <option value="visioRoom">Visio-Room</option>
-                  <option value="meetingRoom">Meeting-Room</option>
-                  <option value="WC">WC</option>
-                  <option value="escal">Escalier</option>
-                  <option value="ascenseur">Ascenseur</option>
-                  <option value="Infirmerie">Infirmerie</option>
-                </select>
+              <form>
+                  <div className="form-group row">
+                    <label className="col-sm-2 col-form-label">Type : </label>
+                    <div className="col-sm-10">
+                    <select className="mdb-select form-control" onChange={this._handleChange}>
+                      <option value="" defaultValue>Choose your option</option>
+                      <option value="freePlace">Collaborateur</option>
+                      <option value="visioRoom">Visio-Room</option>
+                      <option value="meetingRoom">Meeting-Room</option>
+                      <option value="WC">WC</option>
+                      <option value="escal">Escalier</option>
+                      <option value="ascenseur">Ascenseur</option>
+                      <option value="Infirmerie">Infirmerie</option>
+                    </select>  
+                    </div>
+                  </div>
+                  <div id="divName" className="form-group row hidden">
+                    <label className="col-sm-2 col-form-label">Name :</label>
+                    <div className="col-sm-10">
+                      <input type="text" className="form-control" id="inputName" placeholder="Name"/>
+                    </div>
+                  </div>
+              </form>
+                
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={this.close}>

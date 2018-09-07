@@ -36,7 +36,7 @@ export class Layout extends Component {
                             <NavLink to="/"><Fa icon="home" list/> Accueil</NavLink>
                           </NavItem>
                           <NavItem>
-                            <NavLink to="/"><Fa icon="wrench" list/> Admin</NavLink>
+                            <NavLink to="/login"><Fa icon="wrench" list/> Admin</NavLink>
                           </NavItem>
                           
                         </NavbarNav>
